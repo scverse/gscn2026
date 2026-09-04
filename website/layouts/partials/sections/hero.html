@@ -1,30 +1,4 @@
 <section class="hero" aria-label="Event hero">
-  <div class="hero__bg">
-    {{ if .Site.Params.heroVideo }}
-      <video autoplay muted loop playsinline aria-hidden="true">
-        <source src="{{ .Site.Params.heroVideo }}" type="video/mp4" />
-      </video>
-    {{ else if .Site.Params.heroImage }}
-      <img
-        src="{{ (.Site.Params.heroImage | strings.TrimPrefix "/") | relURL }}"
-        alt=""
-        aria-hidden="true"
-        loading="eager"
-      />
-    {{ end }}
-  </div>
-  <div class="hero__overlay" aria-hidden="true"></div>
-
-  {{ with .Site.Params.heroSwirl }}
-  <img
-    class="hero__swirl"
-    src="{{ . | strings.TrimPrefix "/" | relURL }}"
-    alt=""
-    aria-hidden="true"
-    loading="eager"
-  />
-  {{ end }}
-
   <div class="hero__content">
     {{ with .Site.Params.eventSeries }}
       <p class="hero__series">{{ . }}</p>
@@ -34,28 +8,19 @@
 
     <p class="hero__meta">
       {{ .Site.Params.eventDates }}
-      {{ with .Site.Params.eventLocation }}
-        · {{ . }}
-      {{ end }}
+      {{ with .Site.Params.eventLocation }} · {{ . }}{{ end }}
     </p>
 
     {{ with .Site.Params.eventTagline }}
       <p class="hero__tagline">{{ . }}</p>
     {{ end }}
 
-    <div class="hero__actions">
-      {{ with .Site.Params.cta }}{{ if .enabled }}
-        <a href="{{ .url }}" class="btn-accent">{{ .label }}</a>
-      {{ end }}{{ end }}
-      {{ with .Site.Params.calendarURL }}
+    {{ with .Site.Params.calendarURL }}
+      <div class="hero__actions">
         <a href="{{ . }}" class="btn-outline-accent" target="_blank" rel="noopener">
           <i class="bi bi-calendar-event" aria-hidden="true"></i> Add to calendar
         </a>
-      {{ end }}
-    </div>
+      </div>
+    {{ end }}
   </div>
-
-  <a class="hero__scroll" href="#about" aria-label="Scroll to content">
-    <i class="bi bi-chevron-down" aria-hidden="true"></i>
-  </a>
 </section>

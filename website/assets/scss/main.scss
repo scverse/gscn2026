@@ -1128,3 +1128,122 @@ h1, h2, h3, h4, h5, h6 {
   .btn-accent,
   .btn-outline-accent { margin-right: 0.5rem; }
 }
+
+/* ── Plain hero: no dark panel, no swirl, no gradient text ──────────────── */
+.hero {
+  min-height: 0;
+  padding: 5.5rem 1.5rem 4rem;
+  background: $white;
+  color: $grey-dark;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+  &__bg,
+  &__overlay,
+  &__swirl,
+  &__scroll { display: none !important; }
+
+  &__content { padding: 0; }
+
+  &__series {
+    color: $grey-light;
+    opacity: 1;
+    letter-spacing: 0.12em;
+  }
+
+  &__title {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    color: $grey-dark;
+    font-weight: 700;
+    font-size: clamp(2rem, 5.5vw, 3.25rem);
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  &__meta {
+    color: $grey-mid;
+    opacity: 1;
+    font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  }
+
+  &__tagline {
+    color: $grey-light;
+    opacity: 1;
+    margin: 1rem auto 0;
+  }
+
+  &__actions { margin-top: 2rem; }
+}
+
+/* Brand mark: flat, not gradient-filled */
+.navbar-brand .brand-event {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: $grey-dark;
+}
+
+/* The mobile nav was built to float, white-on-white-invisible, over a dark
+   full-bleed hero. That hero no longer exists, so make it an ordinary light
+   bar: always opaque, brand always visible, dark controls. */
+@media (max-width: 991px) {
+  .site-nav {
+    position: sticky !important;
+    background: $nav-bg !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+
+    &.nav--scrolled { background: $nav-bg !important; }
+  }
+
+  .navbar-brand {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    color: $grey-dark !important;
+
+    span:not(.brand-event) { color: $grey-dark !important; }
+    .brand-separator {
+      color: $grey-light !important;
+      -webkit-text-fill-color: $grey-light !important;
+    }
+  }
+
+  .navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2851%2c51%2c51%2c0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  .navbar-collapse.show,
+  .navbar-collapse.collapsing {
+    background: $white;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-top: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .navbar-nav .nav-link {
+    color: $nav-text !important;
+    &:hover {
+      color: $nav-text-hover !important;
+      background: $tile-bg;
+    }
+  }
+}
+
+@media (max-width: 50rem) {
+  .hero {
+    min-height: 0;
+    padding: 4.5rem 1.25rem 3rem;
+  }
+}
+
+/* Schedule badges: one neutral chip instead of five colours */
+.schedule-item__badge {
+  &--hack,
+  &--talk,
+  &--break,
+  &--social,
+  &--logistics {
+    background: $tile-bg;
+    color: $grey-light;
+  }
+}

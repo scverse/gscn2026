@@ -14,10 +14,6 @@ title = "scverse x GSCN 2026"
   venueName     = "Rahel Hirsch Center, Charité — Room 01 327 (Ingeborg Rapoport), Luisenstr. 65"
   venueMapURL   = "https://www.google.com/maps/search/?api=1&query=Rahel-Hirsch-Center+Luisenstra%C3%9Fe+65+10117+Berlin"
 
-  heroImage     = ""
-  heroVideo     = ""
-  heroSwirl     = "/img/hero/swirl.png"
-
   calendarURL   = ""
   githubRepo    = "https://github.com/scverse/gscn2026"
   # TODO: replace with the 2026-09 workshop channel once it exists.
@@ -31,13 +27,13 @@ title = "scverse x GSCN 2026"
     label = ""
     url   = ""
 
-# ─── Per-event colour palette (Spatial / teal preset) ────────────────────────
+# ─── Palette: neutral, one quiet accent for links and buttons ────────────────
   [params.theme]
-    accent        = "#40a9ff"
-    accentDark    = "#0080dd"
-    gradientStart = "#262fb5"
-    gradientEnd   = "#40a9ff"
-    highlight     = "#6cf1a1"
+    accent        = "#2c5282"
+    accentDark    = "#1f3d63"
+    gradientStart = "#333333"   # gradient-clipped text renders flat
+    gradientEnd   = "#333333"
+    highlight     = "#e2e8f0"
 
 [markup.goldmark.renderer]
   unsafe = true
