@@ -1084,8 +1084,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ── Prose blocks (setup instructions) ──────────────────────────────────── */
+/* .section .section-body caps the column at 700px and out-specifies a bare
+   .prose, which squeezes the pip commands. Match that specificity, pin the
+   column to the left edge of the section and let it use the full width. */
+.section .section-body.prose {
+  max-width: none;
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+}
+
 .prose {
-  max-width: 62rem;
 
   h3 {
     font-size: 1.05rem;
