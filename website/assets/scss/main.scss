@@ -1236,14 +1236,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Schedule badges: one neutral chip instead of five colours */
+/* Schedule badges: one neutral chip, whatever the type is called */
 .schedule-item__badge {
-  &--hack,
-  &--talk,
-  &--break,
-  &--social,
-  &--logistics {
-    background: $tile-bg;
-    color: $grey-light;
-  }
+  background: $tile-bg;
+  color: $grey-light;
 }
