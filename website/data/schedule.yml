@@ -1,10 +1,11 @@
-# Matches the syllabus circulated by GSCN. Only the closing "end of day" markers
-# are added, to show when the final hands-on block finishes.
+# Follows the syllabus circulated by GSCN, with the day-1 troubleshooting hour moved
+# to 12:00 (tim, 2026-09-04). The closing "end of day" markers are added, to show when
+# the final hands-on block finishes.
 days:
   - label: "Day 1"
     date: "Mon 7 September"
     items:
-      - time: "11:00"
+      - time: "12:00"
         title: "Technical troubleshooting: setting up your working environment"
         type: "setup"
       - time: "13:00"

@@ -5,9 +5,9 @@ title = "Before you arrive"
   list = "never"
 +++
 
-Please install the software **before** day 1. Monday morning has a dedicated
-troubleshooting hour from 11:00 to 12:00, but it is meant for fixing what did not work,
-not for installing from scratch over conference wifi.
+Please install the software **before** day 1. Monday has a dedicated troubleshooting
+hour from 12:00 to 13:00, but it is meant for fixing what did not work, not for
+installing from scratch over conference wifi.
 
 The commands below are identical on macOS, Windows and Linux. Run them in the
 **Anaconda Prompt** on Windows, or a normal terminal on macOS and Linux.
