@@ -1,0 +1,10 @@
+public/
+resources/_gen/
+hugo_stats.json
+.hugo_build.lock
+node_modules/
+**/.DS_Store
+.prettierignore
+
+# Hugo build cache (any depth)
+**/resources/_gen/

@@ -1,0 +1,54 @@
+baseURL = "https://scverse.org/gscn2026/"
+languageCode = "en-us"
+title = "scverse x GSCN 2026"
+
+# ─── Event identity ──────────────────────────────────────────────────────────
+[params]
+  eventName     = "scverse x GSCN 2026"
+  eventSeries   = "Computational single-cell genomics for stem cell biologists"
+  eventTagline  = "A hands-on workshop on analysing single-cell RNA-seq and spatial transcriptomics data with the scverse ecosystem."
+  eventDates    = "September 7 - 8, 2026"
+  eventStart    = "2026-09-07"  # ISO date — used for calendar links
+  eventEnd      = "2026-09-08"
+  eventLocation = "Berlin, Germany"
+  venueName     = "Rahel Hirsch Center, Charité — Room 01 327 (Ingeborg Rapoport), Luisenstr. 65"
+  venueMapURL   = "https://www.google.com/maps/search/?api=1&query=Rahel-Hirsch-Center+Luisenstra%C3%9Fe+65+10117+Berlin"
+
+  heroImage     = ""
+  heroVideo     = ""
+  heroSwirl     = "/img/hero/swirl.png"
+
+  calendarURL   = ""
+  githubRepo    = "https://github.com/scverse/gscn2026"
+  # TODO: replace with the 2026-09 workshop channel once it exists.
+  zulipChannel  = "https://scverse.zulipchat.com/"
+  linkedinURL   = "https://www.linkedin.com/company/scverse/"
+  materialsRepo = "https://github.com/scverse/202510_workshop_GSCN"
+
+  # Registration ran through GSCN and is closed — no CTA button.
+  [params.cta]
+    enabled = false
+    label = ""
+    url   = ""
+
+# ─── Per-event colour palette (Spatial / teal preset) ────────────────────────
+  [params.theme]
+    accent        = "#40a9ff"
+    accentDark    = "#0080dd"
+    gradientStart = "#262fb5"
+    gradientEnd   = "#40a9ff"
+    highlight     = "#6cf1a1"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.goldmark.extensions.typographer]
+  disable = true
+
+[markup.highlight]
+  noClasses = false
+  style = "github"
+
+[taxonomies]
+
+disableKinds = ["taxonomy", "term", "RSS"]

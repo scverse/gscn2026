@@ -1,0 +1,25 @@
+# 'github' is used to fetch the avatar automatically (leave blank to hide avatar).
+groups:
+  - name: "Instructors"
+    members:
+      - name: "Sara Jimenez"
+        affiliation: "scverse / Helmholtz Munich"
+        github: "sarajimenez"
+        website: ""
+
+      - name: "Francesca Drummer"
+        affiliation: "scverse / Helmholtz Munich"
+        github: "FrancescaDr"
+        website: ""
+
+      - name: "Tim Treis"
+        affiliation: "scverse / Helmholtz Munich"
+        github: "timtreis"
+        website: ""
+
+  - name: "Hosted by"
+    members:
+      - name: "German Stem Cell Network"
+        affiliation: "GSCN — office@gscn.org"
+        github: ""
+        website: "https://www.gscn.org/"
