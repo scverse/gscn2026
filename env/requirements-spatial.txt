@@ -1,0 +1,14 @@
+# Day 2 afternoon. Verified on macOS/arm64, Python 3.11 (2026-09-04);
+# dependency set also resolves for linux and windows.
+jupyterlab
+notebook
+ipykernel
+spatialdata
+spatialdata-io
+spatialdata-plot
+napari[all]        # Qt bindings: napari-spatialdata will not import without them
+napari-spatialdata
+squidpy
+cellcharter
+scvi-tools
+pyproj

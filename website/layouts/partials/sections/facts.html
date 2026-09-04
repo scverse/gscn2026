@@ -68,14 +68,26 @@
             </div>
           {{ end }}
 
-          <!-- GitHub -->
-          {{ with .Site.Params.githubRepo }}
+          <!-- Materials -->
+          {{ with .Site.Params.materialsRepo }}
             <div class="fact-card">
-              <div class="fact-card__icon"><i class="bi bi-github" aria-hidden="true"></i></div>
-              <div class="fact-card__label">Resources</div>
-              <div class="fact-card__value">GitHub repo</div>
+              <div class="fact-card__icon"><i class="bi bi-journal-code" aria-hidden="true"></i></div>
+              <div class="fact-card__label">Materials</div>
+              <div class="fact-card__value">Notebooks &amp; slides</div>
               <a href="{{ . }}" class="chip" target="_blank" rel="noopener">
-                <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Open on GitHub
+                <i class="bi bi-github" aria-hidden="true"></i> Open on GitHub
+              </a>
+            </div>
+          {{ end }}
+
+          <!-- Questions -->
+          {{ with .Site.Params.zulipChannel }}
+            <div class="fact-card">
+              <div class="fact-card__icon"><i class="bi bi-chat-dots" aria-hidden="true"></i></div>
+              <div class="fact-card__label">Questions</div>
+              <div class="fact-card__value">scverse Zulip</div>
+              <a href="{{ . }}" class="chip" target="_blank" rel="noopener">
+                <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Join the chat
               </a>
             </div>
           {{ end }}

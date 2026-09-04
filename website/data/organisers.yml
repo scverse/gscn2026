@@ -2,19 +2,14 @@
 groups:
   - name: "Instructors"
     members:
-      - name: "Sara Jimenez"
-        affiliation: "scverse / Helmholtz Munich"
-        github: "sarajimenez"
+      - name: "Tim Treis"
+        affiliation: "Theis Lab, Helmholtz Munich / scverse"
+        github: "timtreis"
         website: ""
 
       - name: "Francesca Drummer"
-        affiliation: "scverse / Helmholtz Munich"
+        affiliation: "Theis Lab, Helmholtz Munich / scverse"
         github: "FrancescaDr"
-        website: ""
-
-      - name: "Tim Treis"
-        affiliation: "scverse / Helmholtz Munich"
-        github: "timtreis"
         website: ""
 
   - name: "Hosted by"

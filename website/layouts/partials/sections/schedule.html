@@ -7,6 +7,11 @@
     </div>
 
     {{ if and $data $data.days }}
+      <p class="section-body" style="margin-bottom:1.5rem">
+        Provisional. Start and end times follow the GSCN listing; session order follows the
+        previous edition and may still shift.
+      </p>
+
       <div class="schedule-tabs" role="tablist" aria-label="Schedule days">
         {{ range $i, $day := $data.days }}
           <button

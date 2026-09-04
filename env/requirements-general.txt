@@ -1,0 +1,24 @@
+# Day 1 + day 2 morning. Verified on macOS/arm64, Python 3.11 (2026-09-04);
+# dependency set also resolves for linux and windows.
+jupyterlab
+notebook
+ipykernel
+scanpy
+anndata
+scikit-misc
+leidenalg
+igraph
+scrublet
+decoupler
+pydeseq2
+adjustText
+palantir
+cellrank
+scanorama
+scib-metrics
+liana
+pertpy
+lamindb
+seaborn
+filelock          # pertpy imports it but does not declare it
+statsmodels<0.15  # pertpy 1.0.3 needs statsmodels.sandbox.stats.multicomp.multipletests
