@@ -66,7 +66,8 @@ Large files - please download at home, not at the venue. All three are direct do
 The day 1 single-cell datasets are much smaller and will be posted in the materials
 repository and on Zulip shortly before the workshop.
 
-### 4. Join Zulip
+### 4. Join the Zulip channel
 
-Questions before, during and after the workshop go to the scverse Zulip. It is also where
-we post data links and fixes as the sessions run.
+Questions before, during and after the workshop go to the **2026-09: Workshop GSCN**
+channel on the scverse Zulip. It is also where we post data links and fixes as the
+sessions run, so please join it before Monday.

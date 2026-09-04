@@ -41,5 +41,4 @@ Pushing to `main` builds the site and publishes it to the `gh-pages` branch via
 
 ## TODO before the workshop
 
-- [ ] Create the `2026-09: Workshop GSCN` Zulip channel and set `zulipChannel` in `hugo.toml`
 - [ ] Pin package versions in `content/setup.md` after a clean test install
