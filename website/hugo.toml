@@ -19,7 +19,7 @@ title = "scverse x GSCN 2026"
   # TODO: replace with the 2026-09 workshop channel once it exists.
   zulipChannel  = "https://scverse.zulipchat.com/"
   linkedinURL   = "https://www.linkedin.com/company/scverse/"
-  materialsRepo = "https://github.com/scverse/202510_workshop_GSCN"
+  materialsRepo = "https://github.com/scverse/202609_workshop_GSCN"
 
   # Registration ran through GSCN and is closed — no CTA button.
   [params.cta]

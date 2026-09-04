@@ -4,7 +4,7 @@ Landing page for the workshop **"Computational single-cell genomics for stem cel
 biologists"**, Berlin, 7–8 September 2026.
 
 **Live site:** https://scverse.org/gscn2026/
-**Workshop materials (notebooks):** https://github.com/scverse/202510_workshop_GSCN
+**Workshop materials (notebooks):** https://github.com/scverse/202609_workshop_GSCN
 
 Built with [Hugo](https://gohugo.io) from the scverse
 [event-template](https://github.com/scverse/event-template), stripped down to a single
@@ -42,6 +42,4 @@ Pushing to `main` builds the site and publishes it to the `gh-pages` branch via
 ## TODO before the workshop
 
 - [ ] Create the `2026-09: Workshop GSCN` Zulip channel and set `zulipChannel` in `hugo.toml`
-- [ ] Point `materialsRepo` at the 2026 notebook repo once it exists
-- [ ] Confirm the schedule against GSCN's final programme
 - [ ] Pin package versions in `content/setup.md` after a clean test install
