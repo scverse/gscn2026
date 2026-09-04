@@ -22,7 +22,6 @@ two groups on the same material at different depths:
   tools like `scanpy` and `squidpy`.
 - Hands-on experience with trajectory inference, batch-effect correction, cell-cell
   communication and spatial analysis.
-- The ability to interpret single-cell data in the context of stem cell biology.
 
 **Bring your own laptop.** Everything runs locally, so please install the software before
 you arrive - see [Before you arrive](#setup). Day 1 opens with an hour of technical
