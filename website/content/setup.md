@@ -12,8 +12,8 @@ Each step ends with a check you can run.
 
 <!--more-->
 
-You need about 6 GB of free disk space. The environment takes 2.7 GB once installed and
-the data another 1 GB.
+You need about 7 GB of free disk space. The environment takes 2.7 GB once installed and
+the data another 1.5 GB.
 
 ## Step 1: install Anaconda
 
@@ -155,8 +155,16 @@ with your operating system.
 
 ## Step 5: download the data
 
-Three files. Please download these in advance on a connection you trust. They come to
-about 1 GB, and forty laptops pulling that over conference wifi at once will not go well.
+Please download these in advance on a connection you trust. They come to about 1.5 GB in
+total, and forty laptops pulling that over conference wifi at once will not go well.
+
+**Day 1**, one file:
+
+- [day1_inputs.zip](https://github.com/scverse/202609_workshop_GSCN/releases/download/data-v1/day1_inputs.zip), 399 MB
+
+Unzip it into `notebooks/day_1/`, so the files land in `notebooks/day_1/data/`.
+
+**Day 2**, three files:
 
 - [Visium](https://s3.embl.de/spatialdata/raw_data/workshop/visium_2.1.0_2_io_subset.zip), 66 MB
 - [Visium HD](https://s3.embl.de/spatialdata/raw_data/workshop/visium_hd_3.0.0_io_subset.zip), 228 MB
@@ -173,9 +181,6 @@ xenium_2.0.0_io_subset
 
 Leave them as they are. The first notebook of the afternoon converts them into the
 SpatialData Zarr format.
-
-The day 1 datasets are much smaller and we will post them on Zulip shortly before the
-workshop.
 
 ## Starting Jupyter
 
