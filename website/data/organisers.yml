@@ -15,6 +15,6 @@ groups:
   - name: "Hosted by"
     members:
       - name: "German Stem Cell Network"
-        affiliation: "GSCN — office@gscn.org"
+        affiliation: "GSCN, office@gscn.org"
         github: ""
         website: "https://www.gscn.org/"

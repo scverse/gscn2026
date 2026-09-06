@@ -3,56 +3,56 @@ title = "Setup"
 subtitle = "One environment, one kernel. About half an hour, most of it unattended."
 +++
 
-Everything in this workshop runs **on your own laptop**: one Anaconda environment,
-one Jupyter kernel, the same for both days. Day 1 opens with a dedicated setup hour from
-12:00 to 13:00, and we will work through this together then — so if anything below does
-not go smoothly, that is what the hour is for.
+Everything in this workshop runs on your own laptop. You install one Anaconda
+environment and register it as one Jupyter kernel, and that covers both days. Day 1
+opens with a setup hour from 12:00 to 13:00 where we go through this together, so if
+something below does not work, bring it there.
 
-Five steps, in order, each ending with a check — so you always know whether to carry on
-or to ask for help.
+Each step ends with a check you can run.
 
 <!--more-->
 
-You will need roughly **6 GB of free disk space** and a reasonable internet connection.
-The environment takes about 2.7 GB once installed, the workshop data about 1 GB.
+You need about 6 GB of free disk space. The environment takes 2.7 GB once installed and
+the data another 1 GB.
 
-## Step 1 — Install Anaconda
+## Step 1: install Anaconda
 
-Anaconda gives you Python plus the `conda` command we use to build the environment.
-If you already have a working conda (Anaconda, Miniconda or Miniforge), skip to step 2 —
-any of them works.
+Anaconda gives you Python and the `conda` command. If you already have a working conda,
+whether that is Anaconda, Miniconda or Miniforge, go straight to step 2.
 
-Download it from **[anaconda.com/download](https://www.anaconda.com/download)**. The
-site asks you to register; you can also skip that from the link below the form.
+Download it from [anaconda.com/download](https://www.anaconda.com/download). The site
+asks you to register, and there is a "Skip registration" link under the form if you would
+rather not.
 
 ### Windows
 
-Follow the [official Windows guide](https://www.anaconda.com/docs/getting-started/anaconda/install/windows-gui-install)
-and take the **64-Bit Graphical Installer**. Three choices in the installer matter:
+Take the 64-Bit Graphical Installer and follow the
+[Windows guide](https://www.anaconda.com/docs/getting-started/anaconda/install/windows-gui-install).
+Three of the installer's choices matter:
 
-1. **Just Me (recommended)** — installing for all users needs administrator rights and
-   causes permission problems later.
-2. **Install location** — accept the default. If you change it, pick a path with **no
-   spaces and no special characters**.
-3. **Do not** tick "Add Anaconda3 to my PATH environment variable". It is unticked by
-   default and Anaconda recommends leaving it that way; you will use the Anaconda Prompt
-   instead.
+1. Pick **Just Me**. Installing for all users needs administrator rights and causes
+   permission problems later.
+2. Accept the default install location. If you change it, use a path without spaces or
+   special characters.
+3. Leave "Add Anaconda3 to my PATH environment variable" unticked. It is unticked by
+   default, and you will use the Anaconda Prompt instead.
 
 ### macOS
 
-Follow the [official macOS guide](https://www.anaconda.com/docs/getting-started/anaconda/install/mac-gui-install)
-and take the **Graphical Installer**. Apple silicon (M-series) and Intel Macs need different
-installers — the download page detects which one you need. Intel Macs are no longer built for
-new releases, so on an older Intel machine take the newest archived version from
+Take the Graphical Installer and follow the
+[macOS guide](https://www.anaconda.com/docs/getting-started/anaconda/install/mac-gui-install).
+Apple silicon and Intel Macs need different installers, and the download page picks the
+right one for you. Intel Macs are no longer built for new releases, so on an older Intel
+machine take the newest archived version from
 [repo.anaconda.com/archive](https://repo.anaconda.com/archive/).
 
-Accept the default install location. The installer sets up your shell for you.
+Accept the default install location. The installer sets up your shell.
 
 ### Linux
 
-Follow the [official Linux guide](https://www.anaconda.com/docs/getting-started/anaconda/install/linux-install).
-Download the `.sh` installer, then run it and answer `yes` when it offers to initialise
-your shell:
+Follow the [Linux guide](https://www.anaconda.com/docs/getting-started/anaconda/install/linux-install).
+Download the `.sh` installer, run it, and answer `yes` when it offers to initialise your
+shell:
 
 ```
 bash ~/Downloads/Anaconda3-*-Linux-*.sh
@@ -60,11 +60,11 @@ bash ~/Downloads/Anaconda3-*-Linux-*.sh
 
 ### Check
 
-Open a fresh terminal — on **Windows**, search the Start menu for **Anaconda Prompt**
-and open that, not the normal Command Prompt or PowerShell. On **macOS** open
-**Terminal**, on **Linux** your usual terminal.
+Open a new terminal. On Windows, search the Start menu for **Anaconda Prompt** and open
+that one, not the ordinary Command Prompt or PowerShell. On macOS open Terminal, on Linux
+whatever you normally use.
 
-The line where you type should begin with `(base)`:
+The line you type on should start with `(base)`:
 
 ```
 (base) C:\Users\yourname>
@@ -76,54 +76,53 @@ Then run:
 conda --version
 ```
 
-It should print a version number. If the prompt does not say `(base)`, or `conda` is
-"not recognised", jump to [Troubleshooting](#troubleshooting) below.
+It prints a version number. If your prompt does not say `(base)`, or the shell does not
+recognise `conda`, see [troubleshooting](#troubleshooting) at the bottom.
 
-## Step 2 — Download the workshop materials
+## Step 2: download the workshop materials
 
-The notebooks and the environment file live in the
+The notebooks and the environment file are in the
 [materials repository](https://github.com/scverse/202609_workshop_GSCN).
 
-If you use git:
+With git:
 
 ```
 git clone https://github.com/scverse/202609_workshop_GSCN.git
 ```
 
-If you do not, open the [repository](https://github.com/scverse/202609_workshop_GSCN) in your browser, click
-the green **Code** button, choose **Download ZIP**, and unzip it somewhere you can find
-again — your Desktop or Documents folder is fine. Avoid a path with spaces or umlauts if
-you can, and do not leave it inside the Downloads folder on Windows, where the unzipped
-copy is easy to lose.
+Without git, open the
+[repository](https://github.com/scverse/202609_workshop_GSCN) in your browser, click the
+green **Code** button, choose **Download ZIP**, and unzip it somewhere you will find
+again. Desktop or Documents both work. Use a path without spaces or umlauts if you can,
+and on Windows move it out of the Downloads folder, where unzipped copies are easy to
+lose track of.
 
-## Step 3 — Move into that folder
+## Step 3: move into that folder
 
-This is the step people most often get wrong, so it has its own section. In your terminal
-you have to be **inside the folder you just downloaded** before the next commands work.
+Your terminal has to be inside the folder you just downloaded before anything else works.
 
-Type `cd ` — that is `cd` followed by a space — and then get the folder path in:
+Type `cd`, then a space, then the path of the folder. To get the path in:
 
-- **Windows:** find the folder in File Explorer, hold **Shift** and right-click it, choose
-  **Copy as path**, then paste into the Anaconda Prompt with a right-click.
-- **macOS:** drag the folder from Finder onto the Terminal window and the path appears.
-- **Linux:** most file managers have "Open in Terminal" on right-click, which skips this
-  step entirely.
+- **Windows:** find the folder in File Explorer, hold Shift, right-click it, choose
+  **Copy as path**, then right-click in the Anaconda Prompt to paste.
+- **macOS:** drag the folder from Finder onto the Terminal window.
+- **Linux:** most file managers offer "Open in Terminal" on right-click, which skips this
+  entirely.
 
-Press Enter. Then list what is around you:
+Press Enter, then look at what is around you:
 
 ```
 dir          (Windows)
 ls           (macOS and Linux)
 ```
 
-You are in the right folder if the output contains **`environment.yml`** and a
-**`notebooks`** folder. If it does not, you are one level too high or too low — on
-Windows the ZIP often unpacks into a folder of the same name inside itself, so you may
-need one more `cd 202609_workshop_GSCN`.
+You are in the right place if you can see `environment.yml` and a `notebooks` folder. If
+you cannot, you are a level too high or too low. On Windows a ZIP often unpacks into a
+folder of the same name inside itself, so you may need one more `cd 202609_workshop_GSCN`.
 
-## Step 4 — Create the environment and the kernel
+## Step 4: create the environment and the kernel
 
-Still in that folder, run these three commands one at a time, waiting for each to finish:
+Run these three, one at a time, waiting for each to finish:
 
 ```
 conda env create -f environment.yml
@@ -131,16 +130,15 @@ conda activate scverse-workshop
 python -m ipykernel install --user --name scverse-workshop
 ```
 
-The first one downloads about 2 GB and takes **10–30 minutes** depending on your
-connection. It prints a lot, and then goes quiet at a line reading
-`Installing pip dependencies` for several minutes with nothing happening on screen. That
-is the normal, slowest part — do not interrupt it. It is finished when your prompt comes
-back.
+The first one downloads about 2 GB and takes 10 to 30 minutes. It prints a lot, then goes
+quiet at a line saying `Installing pip dependencies` for several minutes with nothing
+visible happening. That is the slow part and it has not hung, so leave it alone. You are
+done when your prompt comes back.
 
-After `conda activate`, the start of your prompt changes from `(base)` to
-`(scverse-workshop)`. That is how you can always tell which environment you are in.
+After `conda activate`, your prompt starts with `(scverse-workshop)` instead of `(base)`.
+That is how you tell which environment you are in.
 
-The third command registers the environment as a Jupyter kernel, so you can pick it from
+The third command registers the environment as a Jupyter kernel so you can select it
 inside a notebook.
 
 ### Check
@@ -149,21 +147,20 @@ inside a notebook.
 python -c "import scanpy, cellrank, palantir, pertpy, spatialdata, squidpy, cellcharter; print('setup ok')"
 ```
 
-The **first** time you run this it takes a few minutes - the libraries build caches on
-first import - and it is quick every time after. If it prints `setup ok`, you are done
-with the software. If it prints an error, copy the
-**whole** message — the last line alone is rarely enough — and post it on
-[Zulip](https://scverse.zulipchat.com/#narrow/channel/630708-2026-09.3A-Workshop-GSCN) with your operating system.
+The first run takes a few minutes while the libraries build their caches, and it is fast
+after that. If it prints `setup ok`, the software side is done. If it prints an error,
+copy the whole message, not only the last line, and post it on
+[Zulip](https://scverse.zulipchat.com/#narrow/channel/630708-2026-09.3A-Workshop-GSCN)
+with your operating system.
 
-## Step 5 — Download the data
+## Step 5: download the data
 
-Three files. **Please download these in advance, on a connection you trust** — they are
-about 1 GB in total, and forty laptops pulling that over conference wifi at the same time
-will not end well:
+Three files. Please download these in advance on a connection you trust. They come to
+about 1 GB, and forty laptops pulling that over conference wifi at once will not go well.
 
-- [Visium](https://s3.embl.de/spatialdata/raw_data/workshop/visium_2.1.0_2_io_subset.zip) — 66 MB
-- [Visium HD](https://s3.embl.de/spatialdata/raw_data/workshop/visium_hd_3.0.0_io_subset.zip) — 228 MB
-- [Xenium](https://s3.embl.de/spatialdata/raw_data/workshop/xenium_2.0.0_io_subset.zip) — 786 MB
+- [Visium](https://s3.embl.de/spatialdata/raw_data/workshop/visium_2.1.0_2_io_subset.zip), 66 MB
+- [Visium HD](https://s3.embl.de/spatialdata/raw_data/workshop/visium_hd_3.0.0_io_subset.zip), 228 MB
+- [Xenium](https://s3.embl.de/spatialdata/raw_data/workshop/xenium_2.0.0_io_subset.zip), 786 MB
 
 Unzip all three into `notebooks/day_2/spatialdata/data/` inside the materials folder. You
 should end up with three folders in there:
@@ -174,15 +171,15 @@ visium_hd_3.0.0_io_subset
 xenium_2.0.0_io_subset
 ```
 
-Leave them as they are — the first notebook of the afternoon converts them into the
-SpatialData Zarr format itself.
+Leave them as they are. The first notebook of the afternoon converts them into the
+SpatialData Zarr format.
 
-The day 1 datasets are much smaller and will be announced on Zulip shortly before the
+The day 1 datasets are much smaller and we will post them on Zulip shortly before the
 workshop.
 
-## On the day: starting Jupyter
+## Starting Jupyter
 
-Every time you sit down to work, three things in this order:
+Every time you sit down to work:
 
 ```
 conda activate scverse-workshop
@@ -190,44 +187,45 @@ cd <the materials folder>
 jupyter lab
 ```
 
-JupyterLab opens in your browser. Open any notebook and look at the **top right corner**:
-it must say **scverse-workshop**. If it says `Python 3`, `base` or anything else, click
-it and choose *scverse-workshop* — otherwise none of the packages will be found.
+JupyterLab opens in your browser. Open a notebook and check the top right corner. It has
+to say **scverse-workshop**. If it says `Python 3`, `base` or anything else, click it and
+pick *scverse-workshop*, otherwise none of the packages will be there.
 
-Starting JupyterLab from **Anaconda Navigator** instead works just as well. The kernel is
-registered for your user account, not for one environment, so *scverse-workshop* appears
-in the kernel list either way — picking the right kernel is what matters, not how you
-launched Jupyter.
+Starting JupyterLab from Anaconda Navigator works too. The kernel is registered for your
+user account rather than for one environment, so *scverse-workshop* shows up in the
+kernel list either way. What matters is picking the right kernel, not how you started
+Jupyter.
 
 ## Troubleshooting
 
-**The prompt does not say `(base)`, or `conda` is not recognised.**
-On Windows you are probably in the normal Command Prompt or PowerShell. Use the
-**Anaconda Prompt** from the Start menu instead. On macOS or Linux, close the terminal
-and open a new one — the installer only affects terminals started after it ran.
+**Your prompt does not say `(base)`, or the shell does not recognise `conda`.**
+On Windows you are probably in the ordinary Command Prompt or PowerShell. Use the
+Anaconda Prompt from the Start menu. On macOS or Linux, close the terminal and open a new
+one, since the installer only affects terminals started after it ran.
 
-**`conda activate` says you must run `conda init` first.**
+**`conda activate` tells you to run `conda init` first.**
 Run `conda init`, then close the terminal completely and open a new one. On Windows
-PowerShell specifically, `conda init powershell` is the one you want.
+PowerShell, use `conda init powershell`.
 
 **`conda env create` fails partway through.**
 Usually a dropped connection or a full disk. Delete the half-built environment and start
-again — nothing is lost:
+over, nothing is lost:
 
 ```
 conda env remove -n scverse-workshop
 conda env create -f environment.yml
 ```
 
-**"Solving environment" runs for a very long time.**
-Anything up to a few minutes is normal. Much longer usually means an older conda; update
-it with `conda update -n base conda` and try again.
+**"Solving environment" takes a very long time.**
+A few minutes is normal. Much longer usually means an old conda, so run
+`conda update -n base conda` and try again.
 
-**Jupyter opens but the kernel is missing or keeps dying.**
-Check that step 4's third command ran while `scverse-workshop` was active. You can list
-what Jupyter knows about with `jupyter kernelspec list`; `scverse-workshop` should appear.
-Re-running that command is harmless.
+**Jupyter starts but the kernel is missing or keeps dying.**
+Check that the third command in step 4 ran while `scverse-workshop` was active. Run
+`jupyter kernelspec list` to see what Jupyter knows about, and `scverse-workshop` should
+be in there. Running that install command again does no harm.
 
-**Anything else.** Post it on [Zulip](https://scverse.zulipchat.com/#narrow/channel/630708-2026-09.3A-Workshop-GSCN) — operating system, what
-you ran, and the full error text. We will pick it up there, and otherwise sort it out in
-the setup hour on day 1.
+**Anything else.** Post it on
+[Zulip](https://scverse.zulipchat.com/#narrow/channel/630708-2026-09.3A-Workshop-GSCN)
+with your operating system, what you ran, and the full error text. We will pick it up
+there, and otherwise sort it out in the setup hour on day 1.
