@@ -1,0 +1,95 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Technical setup · scverse x GSCN 2026</title><meta name=description content="A hands-on workshop on analysing single-cell RNA-seq and spatial transcriptomics data with the scverse ecosystem."><link rel=icon type=image/svg+xml href=/gscn2026/img/favicon/favicon.svg><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css crossorigin=anonymous><link rel=stylesheet href=/gscn2026/scss/main.min.77de9d2e870941d7d5e4904993371720337f9cad00e8efae2f18d035f49d33b1.css><style>:root{--accent:#2c5282;--accent-dark:#1f3d63;--gradient-start:#333333;--gradient-end:#333333;--highlight:#e2e8f0}</style><meta property="og:url" content="https://scverse.org/gscn2026/setup/"><meta property="og:site_name" content="scverse x GSCN 2026"><meta property="og:title" content="Technical setup"><meta property="og:description" content="Everything in this workshop runs on your own laptop: one Anaconda environment, one Jupyter kernel, the same for both days. Monday opens with a troubleshooting hour from 12:00 to 13:00, but that hour is for fixing what did not work — not for installing from scratch over conference wifi.
+Five steps, in order, each ending with a check — so you always know whether to carry on or to ask for help."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"></head><body><a class=skip-link href=#main-content>Skip to main content</a><header class=site-nav><div class=container><nav class="navbar navbar-expand-lg" aria-label="Site navigation"><a class=navbar-brand href=https://scverse.org/gscn2026/><img src=/gscn2026/img/logo/scverse_symbol.svg alt width=28 height=28>
+<span>scverse</span>
+<span class="brand-separator mx-1">×</span>
+<span class=brand-event>GSCN 2026</span>
+</a><button class="navbar-toggler border-0" type=button data-bs-toggle=collapse data-bs-target=#site-nav-menu aria-controls=site-nav-menu aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse justify-content-end" id=site-nav-menu><ul class="navbar-nav gap-1 align-items-lg-center"><li class=nav-item><a class=nav-link href=/gscn2026/#about>About</a></li><li class=nav-item><a class=nav-link href=/gscn2026/#schedule>Schedule</a></li><li class=nav-item><a class=nav-link href=/gscn2026/setup/>Setup</a></li><li class=nav-item><a class=nav-link href=/gscn2026/#organisers>Instructors</a></li><li class=nav-item><a class=nav-link href=/gscn2026/#contact>Contact</a></li></ul></div></nav></div></header><main id=main-content><header class=page-header><div class=page-header__inner><h1 class="page-header__title gradient-text">Technical setup</h1><p class=page-header__subtitle>Install this before day 1 — it takes about half an hour, most of it unattended.</p></div></header><section class=section><div class=section-inner><div class=prose><p>Everything in this workshop runs <strong>on your own laptop</strong>: one Anaconda environment,
+one Jupyter kernel, the same for both days. Monday opens with a troubleshooting hour
+from 12:00 to 13:00, but that hour is for fixing what did not work — not for
+installing from scratch over conference wifi.</p><p>Five steps, in order, each ending with a check — so you always know whether to carry on
+or to ask for help.</p><p>You will need roughly <strong>6 GB of free disk space</strong> and a reasonable internet connection.
+The environment takes about 2.7 GB once installed, the workshop data about 1 GB.</p><h2 id=step-1--install-anaconda>Step 1 — Install Anaconda</h2><p>Anaconda gives you Python plus the <code>conda</code> command we use to build the environment.
+If you already have a working conda (Anaconda, Miniconda or Miniforge), skip to step 2 —
+any of them works.</p><p>Download it from <strong><a href=https://www.anaconda.com/download>anaconda.com/download</a></strong>. The
+site asks you to register; you can also skip that from the link below the form.</p><h3 id=windows>Windows</h3><p>Follow the <a href=https://www.anaconda.com/docs/getting-started/anaconda/install/windows-gui-install>official Windows guide</a>
+and take the <strong>64-Bit Graphical Installer</strong>. Three choices in the installer matter:</p><ol><li><strong>Just Me (recommended)</strong> — installing for all users needs administrator rights and
+causes permission problems later.</li><li><strong>Install location</strong> — accept the default. If you change it, pick a path with <strong>no
+spaces and no special characters</strong>.</li><li><strong>Do not</strong> tick "Add Anaconda3 to my PATH environment variable". It is unticked by
+default and Anaconda recommends leaving it that way; you will use the Anaconda Prompt
+instead.</li></ol><h3 id=macos>macOS</h3><p>Follow the <a href=https://www.anaconda.com/docs/getting-started/anaconda/install/mac-gui-install>official macOS guide</a>
+and take the <strong>Graphical Installer</strong>. Apple silicon (M-series) and Intel Macs need different
+installers — the download page detects which one you need. Intel Macs are no longer built for
+new releases, so on an older Intel machine take the newest archived version from
+<a href=https://repo.anaconda.com/archive/>repo.anaconda.com/archive</a>.</p><p>Accept the default install location. The installer sets up your shell for you.</p><h3 id=linux>Linux</h3><p>Follow the <a href=https://www.anaconda.com/docs/getting-started/anaconda/install/linux-install>official Linux guide</a>.
+Download the <code>.sh</code> installer, then run it and answer <code>yes</code> when it offers to initialise
+your shell:</p><pre tabindex=0><code>bash ~/Downloads/Anaconda3-*-Linux-*.sh
+</code></pre><h3 id=check>Check</h3><p>Open a fresh terminal — on <strong>Windows</strong>, search the Start menu for <strong>Anaconda Prompt</strong>
+and open that, not the normal Command Prompt or PowerShell. On <strong>macOS</strong> open
+<strong>Terminal</strong>, on <strong>Linux</strong> your usual terminal.</p><p>The line where you type should begin with <code>(base)</code>:</p><pre tabindex=0><code>(base) C:\Users\yourname&gt;
+</code></pre><p>Then run:</p><pre tabindex=0><code>conda --version
+</code></pre><p>It should print a version number. If the prompt does not say <code>(base)</code>, or <code>conda</code> is
+"not recognised", jump to <a href=#troubleshooting>Troubleshooting</a> below.</p><h2 id=step-2--download-the-workshop-materials>Step 2 — Download the workshop materials</h2><p>The notebooks and the environment file live in the
+<a href=https://github.com/scverse/202609_workshop_GSCN>materials repository</a>.</p><p>If you use git:</p><pre tabindex=0><code>git clone https://github.com/scverse/202609_workshop_GSCN.git
+</code></pre><p>If you do not, open the <a href=https://github.com/scverse/202609_workshop_GSCN>repository</a> in your browser, click
+the green <strong>Code</strong> button, choose <strong>Download ZIP</strong>, and unzip it somewhere you can find
+again — your Desktop or Documents folder is fine. Avoid a path with spaces or umlauts if
+you can, and do not leave it inside the Downloads folder on Windows, where the unzipped
+copy is easy to lose.</p><h2 id=step-3--move-into-that-folder>Step 3 — Move into that folder</h2><p>This is the step people most often get wrong, so it has its own section. In your terminal
+you have to be <strong>inside the folder you just downloaded</strong> before the next commands work.</p><p>Type <code>cd </code>— that is <code>cd</code> followed by a space — and then get the folder path in:</p><ul><li><strong>Windows:</strong> find the folder in File Explorer, hold <strong>Shift</strong> and right-click it, choose
+<strong>Copy as path</strong>, then paste into the Anaconda Prompt with a right-click.</li><li><strong>macOS:</strong> drag the folder from Finder onto the Terminal window and the path appears.</li><li><strong>Linux:</strong> most file managers have "Open in Terminal" on right-click, which skips this
+step entirely.</li></ul><p>Press Enter. Then list what is around you:</p><pre tabindex=0><code>dir          (Windows)
+ls           (macOS and Linux)
+</code></pre><p>You are in the right folder if the output contains <strong><code>environment.yml</code></strong> and a
+<strong><code>notebooks</code></strong> folder. If it does not, you are one level too high or too low — on
+Windows the ZIP often unpacks into a folder of the same name inside itself, so you may
+need one more <code>cd 202609_workshop_GSCN</code>.</p><h2 id=step-4--create-the-environment-and-the-kernel>Step 4 — Create the environment and the kernel</h2><p>Still in that folder, run these three commands one at a time, waiting for each to finish:</p><pre tabindex=0><code>conda env create -f environment.yml
+conda activate scverse-workshop
+python -m ipykernel install --user --name scverse-workshop
+</code></pre><p>The first one downloads about 2 GB and takes <strong>10–30 minutes</strong> depending on your
+connection. It prints a lot, and then goes quiet at a line reading
+<code>Installing pip dependencies</code> for several minutes with nothing happening on screen. That
+is the normal, slowest part — do not interrupt it. It is finished when your prompt comes
+back.</p><p>After <code>conda activate</code>, the start of your prompt changes from <code>(base)</code> to
+<code>(scverse-workshop)</code>. That is how you can always tell which environment you are in.</p><p>The third command registers the environment as a Jupyter kernel, so you can pick it from
+inside a notebook.</p><h3 id=check-1>Check</h3><pre tabindex=0><code>python -c &#34;import scanpy, cellrank, palantir, pertpy, spatialdata, squidpy, cellcharter; print(&#39;setup ok&#39;)&#34;
+</code></pre><p>The <strong>first</strong> time you run this it takes a few minutes - the libraries build caches on
+first import - and it is quick every time after. If it prints <code>setup ok</code>, you are done
+with the software. If it prints an error, copy the
+<strong>whole</strong> message — the last line alone is rarely enough — and post it on
+<a href=https://scverse.zulipchat.com/#narrow/channel/630708-2026-09.3A-Workshop-GSCN>Zulip</a> with your operating system.</p><h2 id=step-5--download-the-data>Step 5 — Download the data</h2><p>Three files, please download them at home:</p><ul><li><a href=https://s3.embl.de/spatialdata/raw_data/workshop/visium_2.1.0_2_io_subset.zip>Visium</a> — 66 MB</li><li><a href=https://s3.embl.de/spatialdata/raw_data/workshop/visium_hd_3.0.0_io_subset.zip>Visium HD</a> — 228 MB</li><li><a href=https://s3.embl.de/spatialdata/raw_data/workshop/xenium_2.0.0_io_subset.zip>Xenium</a> — 786 MB</li></ul><p>Unzip all three into <code>notebooks/day_2/spatialdata/data/</code> inside the materials folder. You
+should end up with three folders in there:</p><pre tabindex=0><code>visium_2.1.0_2_io_subset
+visium_hd_3.0.0_io_subset
+xenium_2.0.0_io_subset
+</code></pre><p>Leave them as they are — the first notebook of the afternoon converts them into the
+SpatialData Zarr format itself.</p><p>The day 1 datasets are much smaller and will be announced on Zulip shortly before the
+workshop.</p><h2 id=on-the-day-starting-jupyter>On the day: starting Jupyter</h2><p>Every time you sit down to work, three things in this order:</p><pre tabindex=0><code>conda activate scverse-workshop
+cd &lt;the materials folder&gt;
+jupyter lab
+</code></pre><p>JupyterLab opens in your browser. Open any notebook and look at the <strong>top right corner</strong>:
+it must say <strong>scverse-workshop</strong>. If it says <code>Python 3</code>, <code>base</code> or anything else, click
+it and choose <em>scverse-workshop</em> — otherwise none of the packages will be found.</p><p>Starting JupyterLab from <strong>Anaconda Navigator</strong> instead works just as well. The kernel is
+registered for your user account, not for one environment, so <em>scverse-workshop</em> appears
+in the kernel list either way — picking the right kernel is what matters, not how you
+launched Jupyter.</p><h2 id=troubleshooting>Troubleshooting</h2><p><strong>The prompt does not say <code>(base)</code>, or <code>conda</code> is not recognised.</strong>
+On Windows you are probably in the normal Command Prompt or PowerShell. Use the
+<strong>Anaconda Prompt</strong> from the Start menu instead. On macOS or Linux, close the terminal
+and open a new one — the installer only affects terminals started after it ran.</p><p><strong><code>conda activate</code> says you must run <code>conda init</code> first.</strong>
+Run <code>conda init</code>, then close the terminal completely and open a new one. On Windows
+PowerShell specifically, <code>conda init powershell</code> is the one you want.</p><p><strong><code>conda env create</code> fails partway through.</strong>
+Usually a dropped connection or a full disk. Delete the half-built environment and start
+again — nothing is lost:</p><pre tabindex=0><code>conda env remove -n scverse-workshop
+conda env create -f environment.yml
+</code></pre><p><strong>"Solving environment" runs for a very long time.</strong>
+Anything up to a few minutes is normal. Much longer usually means an older conda; update
+it with <code>conda update -n base conda</code> and try again.</p><p><strong>Jupyter opens but the kernel is missing or keeps dying.</strong>
+Check that step 4's third command ran while <code>scverse-workshop</code> was active. You can list
+what Jupyter knows about with <code>jupyter kernelspec list</code>; <code>scverse-workshop</code> should appear.
+Re-running that command is harmless.</p><p><strong>Anything else.</strong> Post it on <a href=https://scverse.zulipchat.com/#narrow/channel/630708-2026-09.3A-Workshop-GSCN>Zulip</a> — operating system, what
+you ran, and the full error text. Someone will get back to you before Monday, and we keep
+the troubleshooting hour on day 1 for whatever is left.</p></div></div></section></main><footer class=site-footer><div class=footer-inner><div><a href=https://scverse.org target=_blank rel=noopener>scverse® core team</a>
+· 2026
+· Site built from
+<a href=https://github.com/scverse/event-template target=_blank rel=noopener>event-template</a></div><nav class=footer-links aria-label="Footer links"><a href=https://scverse.org/about/code_of_conduct/ target=_blank rel=noopener>Code of Conduct</a>
+<a href=https://github.com/scverse/gscn2026 target=_blank rel=noopener>GitHub</a>
+<a href=https://scverse.zulipchat.com/#narrow/channel/630708-2026-09.3A-Workshop-GSCN/topic/welcome/with/620915032 target=_blank rel=noopener>Zulip</a></nav></div></footer><script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js crossorigin=anonymous></script><script src=/gscn2026/js/main.c8ae50547f6c75872d1d8df618b11d9e5de8c60c3e4feee27195d2743b6d8df9.js></script></body></html>
