@@ -13,8 +13,8 @@ or to ask for help.
 
 <!--more-->
 
-You will need roughly **5 GB of free disk space** and a reasonable internet connection.
-The environment itself is about 2 GB, the workshop data about 1 GB.
+You will need roughly **6 GB of free disk space** and a reasonable internet connection.
+The environment takes about 2.7 GB once installed, the workshop data about 1 GB.
 
 ## Step 1 — Install Anaconda
 
@@ -41,8 +41,8 @@ and take the **64-Bit Graphical Installer**. Three choices in the installer matt
 ### macOS
 
 Follow the [official macOS guide](https://www.anaconda.com/docs/getting-started/anaconda/install/mac-gui-install)
-and take the **Graphical Installer**. Apple silicon (M1–M4) and Intel Macs need different
-installers — the download page detects this for you. Intel Macs are no longer built for
+and take the **Graphical Installer**. Apple silicon (M-series) and Intel Macs need different
+installers — the download page detects which one you need. Intel Macs are no longer built for
 new releases, so on an older Intel machine take the newest archived version from
 [repo.anaconda.com/archive](https://repo.anaconda.com/archive/).
 
@@ -55,7 +55,7 @@ Download the `.sh` installer, then run it and answer `yes` when it offers to ini
 your shell:
 
 ```
-bash ~/Downloads/Anaconda3-*-Linux-x86_64.sh
+bash ~/Downloads/Anaconda3-*-Linux-*.sh
 ```
 
 ### Check
@@ -76,8 +76,8 @@ Then run:
 conda --version
 ```
 
-You should see something like `conda 25.x.x`. If the prompt does not say `(base)`, or
-`conda` is "not recognised", jump to [Troubleshooting](#troubleshooting) below.
+It should print a version number. If the prompt does not say `(base)`, or `conda` is
+"not recognised", jump to [Troubleshooting](#troubleshooting) below.
 
 ## Step 2 — Download the workshop materials
 
@@ -132,7 +132,10 @@ python -m ipykernel install --user --name scverse-workshop
 ```
 
 The first one downloads about 2 GB and takes **10–30 minutes** depending on your
-connection. It prints a lot; that is normal. It is finished when your prompt comes back.
+connection. It prints a lot, and then goes quiet at a line reading
+`Installing pip dependencies` for several minutes with nothing happening on screen. That
+is the normal, slowest part — do not interrupt it. It is finished when your prompt comes
+back.
 
 After `conda activate`, the start of your prompt changes from `(base)` to
 `(scverse-workshop)`. That is how you can always tell which environment you are in.
@@ -146,7 +149,9 @@ inside a notebook.
 python -c "import scanpy, cellrank, palantir, pertpy, spatialdata, squidpy, cellcharter; print('setup ok')"
 ```
 
-If this prints `setup ok`, you are done with the software. If it prints an error, copy the
+The **first** time you run this it takes a few minutes - the libraries build caches on
+first import - and it is quick every time after. If it prints `setup ok`, you are done
+with the software. If it prints an error, copy the
 **whole** message — the last line alone is rarely enough — and post it on
 [Zulip](https://scverse.zulipchat.com/#narrow/channel/630708-2026-09.3A-Workshop-GSCN) with your operating system.
 
@@ -186,6 +191,11 @@ jupyter lab
 JupyterLab opens in your browser. Open any notebook and look at the **top right corner**:
 it must say **scverse-workshop**. If it says `Python 3`, `base` or anything else, click
 it and choose *scverse-workshop* — otherwise none of the packages will be found.
+
+Starting JupyterLab from **Anaconda Navigator** instead works just as well. The kernel is
+registered for your user account, not for one environment, so *scverse-workshop* appears
+in the kernel list either way — picking the right kernel is what matters, not how you
+launched Jupyter.
 
 ## Troubleshooting
 
