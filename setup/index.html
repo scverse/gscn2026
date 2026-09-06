@@ -7,8 +7,8 @@ Each step ends with a check you can run."><meta property="og:locale" content="en
 <span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse justify-content-end" id=site-nav-menu><ul class="navbar-nav gap-1 align-items-lg-center"><li class=nav-item><a class=nav-link href=/gscn2026/#about>About</a></li><li class=nav-item><a class=nav-link href=/gscn2026/#schedule>Schedule</a></li><li class=nav-item><a class=nav-link href=/gscn2026/#contact>Contact</a></li></ul></div></nav></div></header><main id=main-content><header class=page-header><div class=page-header__inner><h1 class="page-header__title gradient-text">Setup</h1><p class=page-header__subtitle>One environment, one kernel. About half an hour, most of it unattended.</p></div></header><section class=section><div class=section-inner><div class=prose><p>Everything in this workshop runs on your own laptop. You install one Anaconda
 environment and register it as one Jupyter kernel, and that covers both days. Day 1
 opens with a setup hour from 12:00 to 13:00 where we go through this together, so if
-something below does not work, bring it there.</p><p>Each step ends with a check you can run.</p><p>You need about 6 GB of free disk space. The environment takes 2.7 GB once installed and
-the data another 1 GB.</p><h2 id=step-1-install-anaconda>Step 1: install Anaconda</h2><p>Anaconda gives you Python and the <code>conda</code> command. If you already have a working conda,
+something below does not work, bring it there.</p><p>Each step ends with a check you can run.</p><p>You need about 7 GB of free disk space. The environment takes 2.7 GB once installed and
+the data another 1.5 GB.</p><h2 id=step-1-install-anaconda>Step 1: install Anaconda</h2><p>Anaconda gives you Python and the <code>conda</code> command. If you already have a working conda,
 whether that is Anaconda, Miniconda or Miniforge, go straight to step 2.</p><p>Download it from <a href=https://www.anaconda.com/download>anaconda.com/download</a>. The site
 asks you to register, and there is a "Skip registration" link under the form if you would
 rather not.</p><h3 id=windows>Windows</h3><p>Take the 64-Bit Graphical Installer and follow the
@@ -55,14 +55,13 @@ inside a notebook.</p><h3 id=check-1>Check</h3><pre tabindex=0><code>python -c &
 after that. If it prints <code>setup ok</code>, the software side is done. If it prints an error,
 copy the whole message, not only the last line, and post it on
 <a href=https://scverse.zulipchat.com/#narrow/channel/630708-2026-09.3A-Workshop-GSCN>Zulip</a>
-with your operating system.</p><h2 id=step-5-download-the-data>Step 5: download the data</h2><p>Three files. Please download these in advance on a connection you trust. They come to
-about 1 GB, and forty laptops pulling that over conference wifi at once will not go well.</p><ul><li><a href=https://s3.embl.de/spatialdata/raw_data/workshop/visium_2.1.0_2_io_subset.zip>Visium</a>, 66 MB</li><li><a href=https://s3.embl.de/spatialdata/raw_data/workshop/visium_hd_3.0.0_io_subset.zip>Visium HD</a>, 228 MB</li><li><a href=https://s3.embl.de/spatialdata/raw_data/workshop/xenium_2.0.0_io_subset.zip>Xenium</a>, 786 MB</li></ul><p>Unzip all three into <code>notebooks/day_2/spatialdata/data/</code> inside the materials folder. You
+with your operating system.</p><h2 id=step-5-download-the-data>Step 5: download the data</h2><p>Please download these in advance on a connection you trust. They come to about 1.5 GB in
+total, and forty laptops pulling that over conference wifi at once will not go well.</p><p><strong>Day 1</strong>, one file:</p><ul><li><a href=https://github.com/scverse/202609_workshop_GSCN/releases/download/data-v1/day1_inputs.zip>day1_inputs.zip</a>, 399 MB</li></ul><p>Unzip it into <code>notebooks/day_1/</code>, so the files land in <code>notebooks/day_1/data/</code>.</p><p><strong>Day 2</strong>, three files:</p><ul><li><a href=https://s3.embl.de/spatialdata/raw_data/workshop/visium_2.1.0_2_io_subset.zip>Visium</a>, 66 MB</li><li><a href=https://s3.embl.de/spatialdata/raw_data/workshop/visium_hd_3.0.0_io_subset.zip>Visium HD</a>, 228 MB</li><li><a href=https://s3.embl.de/spatialdata/raw_data/workshop/xenium_2.0.0_io_subset.zip>Xenium</a>, 786 MB</li></ul><p>Unzip all three into <code>notebooks/day_2/spatialdata/data/</code> inside the materials folder. You
 should end up with three folders in there:</p><pre tabindex=0><code>visium_2.1.0_2_io_subset
 visium_hd_3.0.0_io_subset
 xenium_2.0.0_io_subset
 </code></pre><p>Leave them as they are. The first notebook of the afternoon converts them into the
-SpatialData Zarr format.</p><p>The day 1 datasets are much smaller and we will post them on Zulip shortly before the
-workshop.</p><h2 id=starting-jupyter>Starting Jupyter</h2><p>Every time you sit down to work:</p><pre tabindex=0><code>conda activate scverse-workshop
+SpatialData Zarr format.</p><h2 id=starting-jupyter>Starting Jupyter</h2><p>Every time you sit down to work:</p><pre tabindex=0><code>conda activate scverse-workshop
 cd &lt;the materials folder&gt;
 jupyter lab
 </code></pre><p>JupyterLab opens in your browser. Open a notebook and check the top right corner. It has
