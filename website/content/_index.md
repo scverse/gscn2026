@@ -24,5 +24,5 @@ two groups on the same material at different depths:
   communication and spatial analysis.
 
 **Bring your own laptop.** Everything runs locally, so please install the software before
-you arrive - see [Before you arrive](#setup). Day 1 opens with an hour of technical
+you arrive - see the [setup instructions](setup/). Day 1 opens with an hour of technical
 troubleshooting, from 12:00 to 13:00, to get any remaining environments working.

@@ -1,8 +1,15 @@
 {{ define "main" }}
   {{/* Only the /local/ page (type=local) shows the accommodation grid + map. */}}
   {{ $isLocal := eq .Type "local" }}
-  {{ $hotels := where (where .Site.Data.accommodation "lat" "!=" nil) "lng" "!=" nil }}
-  {{ $points := where (where .Params.points "lat" "!=" nil) "lng" "!=" nil }}
+  {{/* accommodation data is optional - this event has none */}}
+  {{ $hotels := slice }}
+  {{ with hugo.Data.accommodation }}
+    {{ $hotels = where (where . "lat" "!=" nil) "lng" "!=" nil }}
+  {{ end }}
+  {{ $points := slice }}
+  {{ with .Params.points }}
+    {{ $points = where (where . "lat" "!=" nil) "lng" "!=" nil }}
+  {{ end }}
   {{ $hasMap := and $isLocal (or $points $hotels) }}
 
   <header class="page-header">
@@ -20,7 +27,7 @@
   </section>
   {{ end }}
 
-  {{ if and $isLocal .Site.Data.accommodation }}
+  {{ if and $isLocal $hotels }}
   <section class="section section--alt">
     <div class="section-inner">
       <div class="section-header">
@@ -29,7 +36,7 @@
       </div>
       {{ with .Params.accommodationIntro }}<p class="section-intro">{{ . }}</p>{{ end }}
       <div class="facts-grid">
-        {{ range .Site.Data.accommodation }}
+        {{ range $hotels }}
           <div class="fact-card">
             <div class="fact-card__icon"><i class="bi bi-building" aria-hidden="true"></i></div>
             {{ with .area }}<div class="fact-card__label">{{ . }}</div>{{ end }}
