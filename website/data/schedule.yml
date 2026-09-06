@@ -6,7 +6,7 @@ days:
     date: "Mon 7 September"
     items:
       - time: "12:00"
-        title: "Technical troubleshooting: setting up your working environment"
+        title: "Setup: getting your working environment running"
         type: "setup"
       - time: "13:00"
         title: "Introduction"

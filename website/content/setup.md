@@ -1,12 +1,12 @@
 +++
-title = "Technical setup"
-subtitle = "Install this before day 1 — it takes about half an hour, most of it unattended."
+title = "Setup"
+subtitle = "One environment, one kernel. About half an hour, most of it unattended."
 +++
 
 Everything in this workshop runs **on your own laptop**: one Anaconda environment,
-one Jupyter kernel, the same for both days. Monday opens with a troubleshooting hour
-from 12:00 to 13:00, but that hour is for fixing what did not work — not for
-installing from scratch over conference wifi.
+one Jupyter kernel, the same for both days. Day 1 opens with a dedicated setup hour from
+12:00 to 13:00, and we will work through this together then — so if anything below does
+not go smoothly, that is what the hour is for.
 
 Five steps, in order, each ending with a check — so you always know whether to carry on
 or to ask for help.
@@ -157,7 +157,9 @@ with the software. If it prints an error, copy the
 
 ## Step 5 — Download the data
 
-Three files, please download them at home:
+Three files. **Please download these in advance, on a connection you trust** — they are
+about 1 GB in total, and forty laptops pulling that over conference wifi at the same time
+will not end well:
 
 - [Visium](https://s3.embl.de/spatialdata/raw_data/workshop/visium_2.1.0_2_io_subset.zip) — 66 MB
 - [Visium HD](https://s3.embl.de/spatialdata/raw_data/workshop/visium_hd_3.0.0_io_subset.zip) — 228 MB
@@ -227,5 +229,5 @@ what Jupyter knows about with `jupyter kernelspec list`; `scverse-workshop` shou
 Re-running that command is harmless.
 
 **Anything else.** Post it on [Zulip](https://scverse.zulipchat.com/#narrow/channel/630708-2026-09.3A-Workshop-GSCN) — operating system, what
-you ran, and the full error text. Someone will get back to you before Monday, and we keep
-the troubleshooting hour on day 1 for whatever is left.
+you ran, and the full error text. We will pick it up there, and otherwise sort it out in
+the setup hour on day 1.

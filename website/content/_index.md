@@ -23,6 +23,6 @@ two groups on the same material at different depths:
 - Hands-on experience with trajectory inference, batch-effect correction, cell-cell
   communication and spatial analysis.
 
-**Bring your own laptop.** Everything runs locally, so please install the software before
-you arrive - see the [setup instructions](setup/). Day 1 opens with an hour of technical
-troubleshooting, from 12:00 to 13:00, to get any remaining environments working.
+**Bring your own laptop.** Everything runs locally - see the [setup instructions](setup/).
+Day 1 opens with a dedicated setup hour, from 12:00 to 13:00, where we get everyone's
+environment working together.
